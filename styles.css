@@ -9,6 +9,7 @@
 body {
     background: radial-gradient(#9d5900, #3d2200);
     color: #ffbb89;
+    font-family: WolfMoon;
 }
 
 h1 {
@@ -26,11 +27,15 @@ h1 {
     justify-content: center;
     grid-template-columns: repeat(8, auto);
     grid-gap: 20px;
+
+    padding-bottom: 4rem;
 }
 
 .game-data {
     font-size: 3rem;
     font-family: cursive;
+
+    /* To expand this element till the column */
     grid-column: 1 / -1;
 
     display: flex;
@@ -97,6 +102,7 @@ h1 {
     transform: rotateY(0);
 }
 
+/* Card matched dancing animation */
 .card.matched .fas {
     animation: dance 1s ease-in-out infinite 500ms;
 }
@@ -113,4 +119,55 @@ h1 {
     }
 }
 
-/*  */
+/* Overlay items */
+.overlay-content {
+    height: 100%;
+    width: 100%;
+
+    background-color: rgba(0, 0, 0, 0.85);
+    display: none;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    font-size: 8rem;
+    color: #ff6d00;
+
+    z-index: 1000;
+}
+
+.overlay-content.visible {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.overlay-content-small {
+    padding-top: 5rem;
+    font-size: 2rem;
+}
+
+/* Smaller screen devices, responsive UI */
+
+@media (max-width: 1200px) {
+
+    .game-container {
+        grid-template-columns: repeat(4, auto);
+    }
+    
+}
+
+@media (max-width: 600px) {
+
+    .game-container {
+        grid-template-columns: repeat(2, auto);
+    }
+    
+    .game-data {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+}
