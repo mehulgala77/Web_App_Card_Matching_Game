@@ -70,6 +70,8 @@ h1 {
     border-radius: 8px;
 
     transition: transform 500ms ease-in-out;
+
+    cursor: pointer;
 }
 
 .card-back:hover {
@@ -135,6 +137,8 @@ h1 {
     color: #ff6d00;
 
     z-index: 1000;
+
+    cursor: pointer;
 }
 
 .overlay-content.visible {
